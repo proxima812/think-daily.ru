@@ -20,11 +20,13 @@ const time = new Date().toLocaleDateString("ru");
 ---
 
 <div class="flex flex-wrap gap-3">
+   <!-- <b>{time}</b> -->
  <a
   href={`/reflections/${pathName}/today`}
   class="text-white bg-gradient-to-r from-green-400 to-green-500 hover:translate-x-[4px] transition-transform ease-in"
-  >&#8594; Ежедневник дня <b>{time}</b></a
+  >&#8594; Ежедневник дня</a
  >
+
  <div class="flex flex-wrap gap-3 pb-6">
   {
    moths.map((item) => (
