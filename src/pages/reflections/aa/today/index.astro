@@ -1,0 +1,68 @@
+---
+import Layout from "~/layouts/Layout.astro";
+---
+
+<Layout
+ title="Ежедневные размышления АА: Размышления на каждый трезвый день"
+ desc="Ежедневные размышления Анонимных Алкоголиков"
+>
+ <input id="dateInput" type="date" value="" class="hidden" />
+ <script is:inline>
+  // Upon page load, this function will run
+  window.onload = function () {
+   // Get the current date
+   const currentDate = new Date();
+
+   // Format the day, month, and year
+   const currentDay = ("0" + currentDate.getDate()).slice(-2);
+   const currentMonth = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+   const currentYear = currentDate.getFullYear();
+
+   // Set the formatted date as the value of the 'dateInput' element
+   const dateInput = document.getElementById("dateInput");
+   dateInput.value = currentYear + "-" + currentMonth + "-" + currentDay;
+
+   // Create a new 'change' event
+   const event = new Event("change");
+
+   // Dispatch the 'change' event
+   dateInput.dispatchEvent(event);
+  };
+
+  // Add an 'onchange' event listener to the 'dateInput' element
+  document.getElementById("dateInput").onchange = function () {
+   // Get the entered date
+   const enteredDate = new Date(this.value);
+
+   // Format the day and month
+   const enteredDay = ("0" + enteredDate.getDate()).slice(-2);
+   const enteredMonth = ("0" + (enteredDate.getMonth() + 1)).slice(-2);
+
+   // Define the month abbreviations
+   const monthNames = [
+    "yanvar",
+    "fevral",
+    "mart",
+    "april",
+    "maj",
+    "iyun",
+    "iyul",
+    "avgust",
+    "sentyabr",
+    "oktyabr",
+    "noyabr",
+    "dekabr",
+   ];
+   const month = monthNames[enteredDate.getMonth()];
+   const reflection = "aa";
+
+   // Construct the URL
+   const thinkUrl = `/reflections/${reflection}/${month}/daily_`;
+   const resultLink = thinkUrl + enteredDay + "-" + enteredMonth;
+
+   // Redirect to the new URL
+   window.location.href = resultLink;
+  };
+ </script>
+ <style></style>
+</Layout>

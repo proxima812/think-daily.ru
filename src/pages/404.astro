@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+const { title, desc, poster } = Astro.props;
+---
+
+<Layout
+ title="Страница не найдена..."
+ desc="Ошибка 404. Данной страницы не было найдено..."
+ poster
+>
+ <main class="py-20 max-w-[880px] mx-auto px-5">
+  <h1 class="text-3xl font-bold text-center mb-10">
+   Ошибка 404. Данной страницы не было найдено...
+  </h1>
+  <h2 class="text-[22px] font-medium text-center mb-10">Возможно, вы искали:</h2>
+ </main>
+</Layout>

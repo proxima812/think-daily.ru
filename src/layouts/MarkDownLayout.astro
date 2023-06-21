@@ -1,0 +1,10 @@
+---
+import Layout from "~/layouts/Layout.astro";
+const { title, desc, poster } = Astro.props;
+---
+
+<Layout title={title} desc={desc} poster={poster}>
+ <div class="myContainer">
+  <main class="prose max-w-none"><slot /></main>
+ </div>
+</Layout>

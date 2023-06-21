@@ -1,0 +1,158 @@
+---
+import { Schema } from "astro-seo-schema";
+import {
+ VERIFICATION_BING,
+ VERIFICATION_GOOGLE,
+ VERIFICATION_YANDEX, WEBSITE
+} from "../../scripts/params";
+import Analytics from "./Analytics.astro";
+
+export interface Props {
+ title: string;
+ desc: string;
+ pubDate?: string;
+ poster?: string;
+ indexSite?: string;
+ typeSite?: string;
+}
+
+const siteName = WEBSITE.name;
+const themeColor = "#FFFCE3";
+const localeLang = "ru_RU";
+
+// indexSite = true / false
+// index, follow | noindex, nofollow
+const {
+ title,
+ desc,
+ indexSite = true,
+ typeSite = "website",
+ poster,
+ pubDate,
+} = Astro.props;
+
+const mainTitle = title ?? "Страница - Главная";
+const mainDesc = desc ?? "Описание к сайту - Люка Скайвокера";
+const mainPoster = "posters/poster-og.png";
+const posterOgVk = "posters/poster-vk.png";
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Manifest  -->
+<link rel="manifest" href="/manifest.json" />
+<!-- Табло для яндекс браузера -->
+<link rel="yandex-tableau-widget" href="/manifest.ya.json" />
+<!-- Favicons -->
+<link rel="icon" sizes="32x32" href="/favicon.ico" />
+<link rel="icon" sizes="120x120" type="image/svg+xml" href="/favicon.svg" />
+<!-- <link rel="mask-icon" href="/mask-icon.svg" color="#000" /> -->
+<link
+ rel="apple-touch-icon"
+ type="image/png"
+ sizes="180x180"
+ href="/favicons/icon-180x180.png"
+/>
+<!-- Theme color background  -->
+<meta name="theme-color" content={themeColor} />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Main  -->
+<title>{mainTitle}</title>
+<meta name="title" content={mainTitle} />
+<meta name="description" content={mainDesc} />
+<link rel="canonical" href={Astro.url} />
+
+<!-- Sitemap and RSS feed  -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS" />
+
+<!-- Last publush -->
+{pubDate && <meta property="article:modified_time" content={pubDate} />}
+
+<!-- For analytics -->
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<link rel="preconnect" href="https://mc.yandex.ru" crossorigin />
+<link rel="preconnect" href="https://yandex.ru" />
+
+<link rel="preconnect" href="//mc.yandex.ru" />
+<link rel="preconnect" href="//google.com" />
+<link rel="preconnect" href="//googletagmanager.com" />
+<link rel="preconnect" href="//google-analytics.com" />
+
+<!-- Verifications  -->
+<meta name="yandex-verification" content={VERIFICATION_YANDEX} />
+<meta name="google-site-verification" content={VERIFICATION_GOOGLE} />
+{VERIFICATION_BING && <meta name="msvalidate.01" content={VERIFICATION_BING} />}
+<!-- allow index site -->
+{
+ indexSite ? (
+  <meta name="robots" content="index, follow" />
+ ) : (
+  <meta name="robots" content="noindex, nofollow" />
+ )
+}
+
+<!-- <meta name="revisit-after" content="15 days"> -->
+
+<!-- Open Graph | VK, Facebook, Telegram and more -->
+<meta property="og:type" content={typeSite} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:locale" content={localeLang} />
+<meta property="og:title" content={mainTitle} />
+<meta property="og:description" content={mainDesc} />
+<meta property="og:image" content={Astro.site + mainPoster} />
+<meta property="vk:image" content={Astro.site + posterOgVk} />
+{typeSite === "article" ? null : <meta property="og:site_name" content={siteName} />}
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={mainTitle} />
+<meta property="twitter:description" content={mainDesc} />
+<meta property="twitter:image" content={mainPoster} />
+
+<!-- Pinterest -->
+<meta name="pinterest-rich-pin" content="true" />
+
+{
+ typeSite === "article" ? (
+  <Schema
+   item={{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${title}`,
+    image: [`${poster}`],
+    author: {
+     "@type": "Person",
+     name: "Sam",
+    },
+    publisher: {
+     "@type": "Organization",
+     name: `${WEBSITE.name}`,
+     logo: {
+      "@type": "ImageObject",
+      url: `${Astro.site}favicon.svg`,
+     },
+    },
+    // datePublished: `${date}`,
+    dateModified: `${pubDate}`,
+    description: `${desc}`,
+    mainEntityOfPage: {
+     "@type": "WebPage",
+     "@id": `${Astro.url}`,
+    },
+   }}
+  />
+ ) : (
+  <Schema
+   item={{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: `${WEBSITE.name}`,
+    url: `${Astro.site}`,
+   }}
+  />
+ )
+}
+
+<Analytics />

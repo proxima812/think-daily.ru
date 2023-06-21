@@ -1,0 +1,166 @@
+---
+const { toLink } = Astro.props;
+const btn = "flex text-sm items-center gap-1 p-2 rounded-md bg-white";
+---
+
+<aside class="not-prose flex items-center gap-4 flex-wrap justify-between pt-6 pb-9">
+ <a class={btn} href={toLink}>&#8592; Назад</a>
+ <div class="flex items-center gap-4">
+  <button
+   class={btn}
+   title="Скопировать тектс для Telegram"
+   onclick="copyClipBoard(event)"
+  >
+   <svg
+    width="13"
+    height="14"
+    viewBox="0 0 13 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+   >
+    <path
+     d="M8.568 0H5.8422C4.6074 0 3.6288 0 2.8637 0.1036C2.0755 0.21 1.4378 0.434 0.9352 0.9387C0.4319 1.4434 0.2086 2.0839 0.1029 2.8749C5.21541e-08 3.6435 0 4.6256 0 5.8653V9.9519C0 11.0075 0.644 11.9119 1.5589 12.2913C1.512 11.6543 1.512 10.7618 1.512 10.0184V6.5114C1.512 5.6147 1.512 4.8412 1.5946 4.2224C1.6835 3.5588 1.8837 2.9232 2.3975 2.4073C2.9113 1.8914 3.5448 1.6905 4.2056 1.6009C4.8216 1.5183 5.5916 1.5183 6.4855 1.5183H8.6345C9.5277 1.5183 10.2963 1.5183 10.913 1.6009C10.7282 1.12936 10.4056 0.724426 9.98735 0.43887C9.56906 0.153314 9.07446 0.000379958 8.568 0Z"
+     fill="black"></path>
+    <path
+     d="M2.51996 6.57789C2.51996 4.66969 2.51996 3.71559 3.11076 3.12269C3.70086 2.52979 4.65076 2.52979 6.55196 2.52979H8.56796C10.4685 2.52979 11.4191 2.52979 12.0099 3.12269C12.6 3.71559 12.6 4.66969 12.6 6.57789V9.95188C12.6 11.8601 12.6 12.8142 12.0099 13.4071C11.4191 14 10.4685 14 8.56796 14H6.55196C4.65146 14 3.70086 14 3.11076 13.4071C2.51996 12.8142 2.51996 11.8601 2.51996 9.95188V6.57789Z"
+     fill="black"></path>
+   </svg>
+   Копировать</button
+  >
+  <button
+   title="Скопировать тектс"
+   class="bg-[#18acf6] text-sm text-white flex items-center gap-1 p-2 rounded-md"
+   onclick="copyClipBoardTelegram(event)"
+  >
+   <svg
+    width="13"
+    height="14"
+    viewBox="0 0 13 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+   >
+    <path
+     d="M8.568 0H5.8422C4.6074 0 3.6288 0 2.8637 0.1036C2.0755 0.21 1.4378 0.434 0.9352 0.9387C0.4319 1.4434 0.2086 2.0839 0.1029 2.8749C5.21541e-08 3.6435 0 4.6256 0 5.8653V9.9519C0 11.0075 0.644 11.9119 1.5589 12.2913C1.512 11.6543 1.512 10.7618 1.512 10.0184V6.5114C1.512 5.6147 1.512 4.8412 1.5946 4.2224C1.6835 3.5588 1.8837 2.9232 2.3975 2.4073C2.9113 1.8914 3.5448 1.6905 4.2056 1.6009C4.8216 1.5183 5.5916 1.5183 6.4855 1.5183H8.6345C9.5277 1.5183 10.2963 1.5183 10.913 1.6009C10.7282 1.12936 10.4056 0.724426 9.98735 0.43887C9.56906 0.153314 9.07446 0.000379958 8.568 0Z"
+     fill="white"></path>
+    <path
+     d="M2.51996 6.57789C2.51996 4.66969 2.51996 3.71559 3.11076 3.12269C3.70086 2.52979 4.65076 2.52979 6.55196 2.52979H8.56796C10.4685 2.52979 11.4191 2.52979 12.0099 3.12269C12.6 3.71559 12.6 4.66969 12.6 6.57789V9.95188C12.6 11.8601 12.6 12.8142 12.0099 13.4071C11.4191 14 10.4685 14 8.56796 14H6.55196C4.65146 14 3.70086 14 3.11076 13.4071C2.51996 12.8142 2.51996 11.8601 2.51996 9.95188V6.57789Z"
+     fill="white"></path>
+   </svg>
+   Копировать
+   <svg
+    width="17"
+    height="14"
+    viewBox="0 0 17 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+   >
+    <path
+     d="M15.2827 0.159118L0.546656 5.87106C-0.046349 6.13706 -0.24692 6.66974 0.403327 6.95883L4.18376 8.16645L13.3244 2.48816C13.8235 2.13169 14.3344 2.22674 13.8947 2.61889L6.04419 9.76377L5.79758 12.7875C6.026 13.2543 6.44423 13.2565 6.711 13.0245L8.88297 10.9587L12.6028 13.7586C13.4668 14.2727 13.9369 13.9409 14.1228 12.9986L16.5627 1.3857C16.816 0.22578 16.384 -0.285295 15.2827 0.159118Z"
+     fill="white"></path>
+   </svg></button
+  >
+ </div>
+</aside>
+<script is:inline>
+ // export default для .mdx файлов.
+ function copyClipBoard(event) {
+  const postElement = event.target.closest(".post");
+  const elementsToCopy = postElement.querySelectorAll("h1, h2, h3, b, i, p");
+  const elementsText = [];
+
+  elementsToCopy.forEach((element) => {
+   let tag = element.tagName.toLowerCase();
+   let text = element.textContent.trim();
+
+   switch (tag) {
+    case "h1":
+     elementsText.push(`${text}\n\n`);
+     break;
+    case "h2":
+     elementsText.push(`${text}\n\n`);
+     break;
+    case "h3":
+     elementsText.push(`${text}\n\n`);
+     break;
+    case "b":
+     elementsText.push(`${text}\n\n`);
+     break;
+    case "i":
+     elementsText.push(`${text}\n\n`);
+     break;
+    case "p":
+     elementsText.push(`${text}\n\n`);
+     break;
+    default:
+     break;
+   }
+  });
+
+  const textToCopy = elementsText.join("").trim();
+
+  navigator.clipboard.writeText(textToCopy).then(
+   () => {
+    console.log("Copied to clipboard");
+   },
+   () => {
+    console.error("Failed to copy to clipboard");
+   }
+  );
+  const copied = document.querySelector(".copied");
+  copied.classList.add("active");
+  setTimeout(function () {
+   copied.classList.remove("active");
+  }, 1800);
+ }
+</script>
+<script is:inline>
+ function copyClipBoardTelegram(event) {
+  const postElement = event.target.closest(".post");
+  const elementsToCopy = postElement.querySelectorAll("h1,h2, h3, b, i, p");
+  const elementsText = [];
+
+  elementsToCopy.forEach((element) => {
+   let tag = element.tagName.toLowerCase();
+   let text = element.textContent.trim();
+
+   switch (tag) {
+    case "h1":
+     elementsText.push(`**${text}**\n\n`);
+     break;
+    case "h2":
+     elementsText.push(`${text}\n\n`);
+     break;
+    case "h3":
+     elementsText.push(`**${text}**\n\n`);
+     break;
+    case "b":
+     elementsText.push(`**${text}**\n\n`);
+     break;
+    case "i":
+     elementsText.push(`__${text}__\n\n`);
+     break;
+    case "p":
+     elementsText.push(`${text}\n\n`);
+     break;
+    default:
+     break;
+   }
+  });
+
+  const textToCopy = elementsText.join("").trim();
+
+  navigator.clipboard.writeText(textToCopy).then(
+   () => {
+    console.log("Copied to clipboard");
+   },
+   () => {
+    console.error("Failed to copy to clipboard");
+   }
+  );
+  const copied = document.querySelector(".copied-telegram");
+  copied.classList.add("active");
+  setTimeout(function () {
+   copied.classList.remove("active");
+  }, 1800);
+ }
+</script>

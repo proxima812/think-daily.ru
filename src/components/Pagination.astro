@@ -1,0 +1,32 @@
+---
+const { prevUrl, nextUrl, current } = Astro.props;
+---
+
+<nav
+ aria-label="Пагинация"
+ class="text-[14px] md:text-[16px] gap-2 md:gap-5 my-10 w-full flex items-center justify-center"
+>
+ {
+  prevUrl && (
+   <a href={prevUrl} class="text-right hover:translate-x-[-4px] transition-transform">
+    <span class="hover:bg-accent hover:text-white transition-colors ease-linear empty:bg-transparent bg-white py-[8px] px-[14px] rounded-[10px]">
+     Пред. страница
+    </span>
+   </a>
+  )
+ }
+
+ <span class="leading-[100%] empty:bg-transparent bg-accent text-white font-bold py-[8px] px-[14px] rounded-[10px]">
+  {current}
+ </span>
+
+ {
+  nextUrl && (
+   <a href={nextUrl} class="text-right hover:translate-x-[4px] transition-transform">
+    <span class="hover:bg-accent hover:text-white transition-colors ease-linear empty:bg-transparent bg-white py-[8px] px-[14px] rounded-[10px]">
+     След. страница
+    </span>
+   </a>
+  )
+ }
+</nav>

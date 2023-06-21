@@ -1,0 +1,50 @@
+---
+const { pathName } = Astro.props;
+
+const moths = [
+ { moth: "yanvar", name: "Январь" },
+ { moth: "fevral", name: "Февраль" },
+ { moth: "mart", name: "Март" },
+ { moth: "april", name: "Апрель" },
+ { moth: "maj", name: "Май" },
+ { moth: "iyun", name: "Июнь" },
+ { moth: "iyul", name: "Июль" },
+ { moth: "avgust", name: "Август" },
+ { moth: "sentyabr", name: "Сентябрь" },
+ { moth: "oktyabr", name: "Октябрь" },
+ { moth: "noyabr", name: "Ноябрь" },
+ { moth: "dekabr", name: "Декабрь" },
+];
+
+const time = new Date().toLocaleDateString("ru");
+---
+
+<div class="flex flex-wrap gap-3">
+ <a
+  href={`/reflections/${pathName}/today`}
+  class="text-white bg-gradient-to-r from-green-400 to-green-500 hover:translate-x-[4px] transition-transform ease-in"
+  >&#8594; Ежедневник дня <b>{time}</b></a
+ >
+ <div class="flex flex-wrap gap-3 pb-6">
+  {
+   moths.map((item) => (
+    <a
+     href={`/reflections/${pathName}/${item.moth}`}
+     class={
+      Astro.url.pathname == `/reflections/${pathName}/${item.moth}`
+       ? "bg-accent text-white"
+       : "bg-white text-black"
+     }
+    >
+     {item.name}
+    </a>
+   ))
+  }
+ </div>
+</div>
+
+<style>
+ a {
+  @apply px-2 py-1 rounded-lg text-sm hover:translate-y-[-2px] transition-transform ease-in;
+ }
+</style>

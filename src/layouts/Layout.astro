@@ -1,0 +1,22 @@
+---
+import BaseHead from "~/components/_main/BaseHead.astro";
+import "~/styles/base.css";
+const { title, desc, poster, pubDate, typeSite, indexSite } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <BaseHead
+   typeSite={typeSite}
+   indexSite={indexSite}
+   title={title}
+   desc={desc}
+   pubDate={pubDate}
+   poster={poster}
+  />
+ </head>
+ <body class="bg-slate-100 text-black">
+ <slot />
+ </body>
+</html>
