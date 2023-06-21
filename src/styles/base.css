@@ -6,7 +6,8 @@
  p {
   hyphens: auto;
   /* Быстрое выделение текста */
-  /* user-select: all; */
+  /* user-select: all; da */
+  
  }
 }
 @layer components {
