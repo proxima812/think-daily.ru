@@ -1,4 +1,5 @@
 ---
+import CurrentDateInMonths from "../customs/CurrentDateInMonths";
 const { pathName } = Astro.props;
 
 const moths = [
@@ -15,16 +16,13 @@ const moths = [
  { moth: "noyabr", name: "Ноябрь" },
  { moth: "dekabr", name: "Декабрь" },
 ];
-
-const time = new Date().toLocaleDateString("ru");
 ---
 
 <div class="flex flex-wrap gap-3">
-   <!-- <b>{time}</b> -->
  <a
   href={`/reflections/${pathName}/today`}
   class="text-white bg-gradient-to-r from-green-400 to-green-500 hover:translate-x-[4px] transition-transform ease-in"
-  >&#8594; Ежедневник дня</a
+  >&#8594; Ежедневник дня <CurrentDateInMonths client:load /></a
  >
 
  <div class="flex flex-wrap gap-3 pb-6">
@@ -32,8 +30,8 @@ const time = new Date().toLocaleDateString("ru");
    moths.map((item) => (
     <a
      href={`/reflections/${pathName}/${item.moth}`}
-     class={
-      Astro.url.pathname == `/reflections/${pathName}/${item.moth}`
+     class:list={
+      Astro.url.pathname.startsWith(`/reflections/${pathName}/${item.moth}`)
        ? "bg-accent text-white"
        : "bg-white text-black"
      }
