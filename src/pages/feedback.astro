@@ -1,0 +1,28 @@
+---
+import Nav from "~/components/UI/Nav.astro";
+import Layout from "~/layouts/Layout.astro";
+---
+
+<Layout
+ title="Обратная связь по проекту"
+ desc="Здесь вы можете написать через Telegram обратную связь или же замечание по проекту."
+>
+ <div class="myContainer">
+  <Nav />
+  <h1 class="text-2xl font-bold mt-10">Обратная связь по проекту</h1>
+
+  <div class="my-10 md:-mx-0 -mx-5 p-5 rounded-md flex flex-col gap-5 bg-white">
+   <script
+    async
+    src="https://telegram.org/js/telegram-widget.js?22"
+    data-telegram-post="TD_site_chat/15"
+    data-width="100%"></script>
+    <hr />
+   <script
+    async
+    src="https://telegram.org/js/telegram-widget.js?22"
+    data-telegram-discussion="TD_site_chat/11"
+    data-comments-limit="50"></script>
+  </div>
+ </div>
+</Layout>
