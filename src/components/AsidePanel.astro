@@ -65,7 +65,7 @@ const btn = "flex text-sm items-center gap-1 p-2 rounded-md bg-white";
  // export default для .mdx файлов.
  function copyClipBoard(event) {
   const postElement = event.target.closest(".post");
-  const elementsToCopy = postElement.querySelectorAll("h1, h2, h3, b, i, p");
+  const elementsToCopy = postElement.querySelectorAll("h1, h2, h3, b, i, p, em");
   const elementsText = [];
 
   elementsToCopy.forEach((element) => {
@@ -113,37 +113,45 @@ const btn = "flex text-sm items-center gap-1 p-2 rounded-md bg-white";
   }, 1800);
  }
 </script>
+
 <script is:inline>
+ // export default для .mdx файлов.
  function copyClipBoardTelegram(event) {
   const postElement = event.target.closest(".post");
-  const elementsToCopy = postElement.querySelectorAll("h1,h2, h3, b, i, p");
+  const elementsToCopy = postElement.querySelectorAll("h1, h2, h3, p, b, i");
   const elementsText = [];
 
   elementsToCopy.forEach((element) => {
    let tag = element.tagName.toLowerCase();
    let text = element.textContent.trim();
 
-   switch (tag) {
-    case "h1":
-     elementsText.push(`**${text}**\n\n`);
-     break;
-    case "h2":
-     elementsText.push(`${text}\n\n`);
-     break;
-    case "h3":
-     elementsText.push(`**${text}**\n\n`);
-     break;
-    case "b":
-     elementsText.push(`**${text}**\n\n`);
-     break;
-    case "i":
-     elementsText.push(`__${text}__\n\n`);
-     break;
-    case "p":
-     elementsText.push(`${text}\n\n`);
-     break;
-    default:
-     break;
+   if (["b", "strong"].includes(tag)) {
+    text = `**${text}**`;
+   } else if (["i", "em"].includes(tag)) {
+    text = `__${text}__`;
+   }
+
+   // Если элемент - параграф и содержит вложенные теги
+   if (tag === "p" && element.querySelector("b, i, strong, em")) {
+    text = "";
+    element.childNodes.forEach((child) => {
+     if (child.nodeName.toLowerCase() === "#text") {
+      // Обычный текст
+      text += child.nodeValue;
+     } else if (["b", "strong"].includes(child.nodeName.toLowerCase())) {
+      // Жирный текст
+      text += `**${child.textContent}**`;
+     } else if (["i", "em"].includes(child.nodeName.toLowerCase())) {
+      // Курсив
+      text += `__${child.textContent}__`;
+     }
+    });
+   }
+
+   if (tag === "h1" || tag === "h3") {
+    elementsText.push(`**${text}**\n\n`);
+   } else {
+    elementsText.push(`${text}\n\n`);
    }
   });
 
@@ -164,3 +172,90 @@ const btn = "flex text-sm items-center gap-1 p-2 rounded-md bg-white";
   }, 1800);
  }
 </script>
+
+<!-- <script is:inline>
+ function copyClipBoardTelegram(event) {
+  const postElement = event.target.closest(".post");
+  const elementsToCopy = postElement.querySelectorAll("h1, h2, h3, p, b, i");
+  const elementsText = [];
+
+  elementsToCopy.forEach((element) => {
+   let tag = element.tagName.toLowerCase();
+   let text = element.textContent.trim();
+
+   if (["b", "strong"].includes(tag)) {
+    text = `**${text}**`;
+   } else if (["i", "em"].includes(tag)) {
+    text = `__${text}__`;
+   }
+
+   // Если элемент - параграф и содержит вложенные теги
+   if (tag === "p" && element.querySelector("b, i, strong, em")) {
+    text = "";
+    const childNodes = Array.from(element.childNodes);
+    childNodes.forEach((child, index) => {
+     if (child.nodeName.toLowerCase() === "#text") {
+      // Обычный текст
+      const trimmedText = child.nodeValue.trim();
+      if (trimmedText) {
+       text += trimmedText;
+      }
+     } else if (["b", "strong"].includes(child.nodeName.toLowerCase())) {
+      // Жирный текст
+      const trimmedText = child.textContent.trim();
+      if (trimmedText) {
+       text += `**${trimmedText}**`;
+      }
+     } else if (["i", "em"].includes(child.nodeName.toLowerCase())) {
+      // Курсив
+      const trimmedText = child.textContent.trim();
+      if (trimmedText) {
+       text += `__${trimmedText}__`;
+      }
+     }
+
+     // Если это не последний узел, добавьте пробел после него
+     if (index !== childNodes.length - 1) {
+      text += " ";
+     }
+    });
+
+    // Убираем лишние пробелы вокруг разметки
+    text = text
+     .replace(/ \*\*/g, "**")
+     .replace(/\*\* /g, "**")
+     .replace(/ \*/g, "__")
+     .replace(/\* /g, "__")
+     .trim();
+
+    // Удаляем двойные пробелы
+    text = text.replace(/  +/g, " ");
+   }
+
+   if (text) {
+    // Элемент не должен быть пустым или состоять только из пробелов
+    if (tag === "h1" || tag === "h3") {
+     elementsText.push(`**${text.trim()}**\n\n`);
+    } else {
+     elementsText.push(`${text.trim()}\n\n`);
+    }
+   }
+  });
+
+  const textToCopy = elementsText.join("").trim();
+
+  navigator.clipboard.writeText(textToCopy).then(
+   () => {
+    console.log("Copied to clipboard");
+   },
+   () => {
+    console.error("Failed to copy to clipboard");
+   }
+  );
+  const copied = document.querySelector(".copied-telegram");
+  copied.classList.add("active");
+  setTimeout(function () {
+   copied.classList.remove("active");
+  }, 1800);
+ }
+</script> -->
