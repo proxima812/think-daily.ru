@@ -12,7 +12,7 @@ import { WEBSITE } from "/src/scripts/params.ts";
 // https://astro.build/config
 export default defineConfig({
  site: `${WEBSITE.url}`,
- experimental: { assets: true, redirects: true },
+ experimental: { assets: true },
  build: {
   inlineStylesheets: "auto",
  },
