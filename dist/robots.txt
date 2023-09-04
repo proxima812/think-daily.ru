@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://think-daily.ru/sitemap-0.xml
+Sitemap: https://think-daily.ru/sitemap-index.xml
