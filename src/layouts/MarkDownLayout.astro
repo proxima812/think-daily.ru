@@ -1,9 +1,11 @@
 ---
-import Layout from "~/layouts/Layout.astro";
+import Update from '~/components/Update.astro'
+import Layout from "~/layouts/Layout.astro"
 const { title, desc, poster } = Astro.props;
 ---
 
 <Layout title={title} desc={desc} poster={poster}>
+  <Update />
  <div class="myContainer">
   <main class="prose max-w-none"><slot /></main>
  </div>

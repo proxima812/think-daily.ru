@@ -12,10 +12,9 @@ import { WEBSITE } from "/src/scripts/params.ts";
 // https://astro.build/config
 export default defineConfig({
  site: `${WEBSITE.url}`,
- experimental: { assets: true },
- build: {
-  inlineStylesheets: "auto",
- },
+//  build: {
+//   inlineStylesheets: "auto",
+//  },
  redirects: {
   "/reflections/aa": "/reflections/aa/yanvar",
   "/reflections/an": "/reflections/an/yanvar",
@@ -25,7 +24,6 @@ export default defineConfig({
   "/reflections/aadays": "/reflections/aadays/yanvar",
   "/reflections/lolfc": "/reflections/lolfc/yanvar",
  },
- compressHTML: true,
  integrations: [
   tailwind({
    config: {

@@ -3,8 +3,16 @@ const { title, desc, slug, pathSlug } = Astro.props;
 ---
 
 <article
- class="transition-all ease-linear group hover:border-accent bg-white border-solid border-2 border-gray-200/50 flex flex-col gap-3 p-6 rounded-lg"
+class="relative transition-all ease-linear group hover:border-accent bg-white border-solid border-2 border-gray-200/50 flex flex-col gap-3 p-6 rounded-lg"
 >
+<button
+  class="z-10 absolute top-4 right-4"
+  aria-label={title}
+  data-saveid={`/${slug}/`}
+  aria-pressed="false"
+>
+  {""}
+</button>
  <h3
   class="transition-all ease-linear group-hover:text-accent text-xl font-bold line-clamp-1 select-none"
  >

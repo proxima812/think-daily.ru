@@ -1,20 +1,20 @@
 ---
 export const prerender = true;
-import Layout from "~/layouts/Layout.astro";
+import Layout from "~/layouts/Layout.astro"
 
 // в Layout можно дабавить indexSite={false} чтобы не индексировать страницу
 // Для постов - typeSite="article" | по умолчанию typeSite="website"
 const { pubDate, page } = Astro.props;
 
-import { getCollection } from "astro:content";
-import Article from "~/components/Article.astro";
-import Pagination from "~/components/Pagination.astro";
-import Search from "~/components/Search";
-import FinalTitle from "~/components/UI/FinalTitle.astro";
-import Months from "~/components/UI/Months.astro";
-import Moths12 from "~/components/UI/Moths12.astro";
-import Nav from "~/components/UI/Nav.astro";
-import { REFLECTIONS_NAMES } from "~/scripts/params";
+import { getCollection } from "astro:content"
+import Article from "~/components/Article.astro"
+import Pagination from "~/components/Pagination.astro"
+import Search from "~/components/Search"
+import FinalTitle from "~/components/UI/FinalTitle.astro"
+import Months from "~/components/UI/Months.astro"
+import Moths12 from "~/components/UI/Moths12.astro"
+import Nav from "~/components/UI/Nav.astro"
+import { REFLECTIONS_NAMES } from "~/scripts/params"
 
 // настроить переменные
 const { reflection = "aa", pathSlug = "/reflections/aa/" } = Astro.props;
@@ -49,6 +49,7 @@ export async function getStaticPaths({ paginate }) {
    current={page.currentPage}
    nextUrl={page.url.next}
   />
+
   <div class="my-5 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
    {
     page.data.map(async (post) => (
@@ -61,6 +62,7 @@ export async function getStaticPaths({ paginate }) {
    current={page.currentPage}
    nextUrl={page.url.next}
   />
+
   <div class="pt-5 pb-10">
    <script
     async
