@@ -12,9 +12,10 @@ import { WEBSITE } from "/src/scripts/params.ts";
 // https://astro.build/config
 export default defineConfig({
  site: `${WEBSITE.url}`,
-//  build: {
-//   inlineStylesheets: "auto",
-//  },
+   prefetch: true,
+experimental: {
+    contentCollectionCache: true,
+  },
  redirects: {
   "/reflections/aa": "/reflections/aa/yanvar",
   "/reflections/an": "/reflections/an/yanvar",
