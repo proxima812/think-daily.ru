@@ -3,15 +3,24 @@
 @tailwind utilities;
 
 @layer base {
- p {
-  hyphens: auto;
-  /* Быстрое выделение текста */
-  /* user-select: all; da */
-  
- }
+  p {
+    hyphens: auto;
+    /* Быстрое выделение текста */
+    /* user-select: all; da */
+  }
+  .bg-color-accent {
+    background-image: radial-gradient(
+      76.33% 76.59% at 50.15% 6.06%,
+      #1a1a1a 0,
+      rgb(101 62 116 / 38%) 100%
+    );
+  }
+  .container_in_page_reflection {
+    @apply my-5 items-start grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
 }
 @layer components {
- .myContainer {
-  @apply mx-auto px-5 max-w-5xl;
- }
+  .myContainer {
+    @apply mx-auto px-5 max-w-5xl;
+  }
 }

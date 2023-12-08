@@ -16,15 +16,15 @@ export default defineConfig({
 experimental: {
     contentCollectionCache: true,
   },
- redirects: {
-  "/reflections/aa": "/reflections/aa/yanvar",
-  "/reflections/an": "/reflections/an/yanvar",
-  "/reflections/alanon": "/reflections/alanon/yanvar",
-  "/reflections/alanonmm": "/reflections/alanonmm/yanvar",
-  "/reflections/aa24hours": "/reflections/aa24hours/yanvar",
-  "/reflections/aadays": "/reflections/aadays/yanvar",
-  "/reflections/lolfc": "/reflections/lolfc/yanvar",
- },
+//  redirects: {
+//   "/reflections/aa": "/reflections/aa/yanvar",
+//   "/reflections/an": "/reflections/an/yanvar",
+//   "/reflections/alanon": "/reflections/alanon/yanvar",
+//   "/reflections/alanonmm": "/reflections/alanonmm/yanvar",
+//   "/reflections/aa24hours": "/reflections/aa24hours/yanvar",
+//   "/reflections/aadays": "/reflections/aadays/yanvar",
+//   "/reflections/lolfc": "/reflections/lolfc/yanvar",
+//  },
  integrations: [
   tailwind({
    config: {

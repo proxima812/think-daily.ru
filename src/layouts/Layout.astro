@@ -1,26 +1,23 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
 import Update from '~/components/Update.astro'
-import BaseHead from "~/components/_main/BaseHead.astro"
-import "~/styles/base.css"
-const { title, desc, poster, pubDate, typeSite, indexSite } = Astro.props;
+import BaseHead from '~/components/_main/BaseHead.astro'
+import '~/styles/base.css'
+const { title, desc, poster, pubDate, typeSite, indexSite } = Astro.props
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
- <head>
-  <BaseHead
-   typeSite={typeSite}
-   indexSite={indexSite}
-   title={title}
-   desc={desc}
-   pubDate={pubDate}
-   poster={poster}
-  />
-
- </head>
- <body class="bg-slate-100 text-black">
-<Update />
- <slot />
- </body>
+  <head>
+    <BaseHead
+      typeSite={typeSite}
+      indexSite={indexSite}
+      title={title}
+      desc={desc}
+      pubDate={pubDate}
+      poster={poster}
+    />
+  </head>
+  <body class="bg-slate-100 text-black">
+    <slot />
+  </body>
 </html>

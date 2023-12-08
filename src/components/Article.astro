@@ -1,27 +1,19 @@
 ---
-const { title, desc, slug, pathSlug } = Astro.props;
+const { title, desc, slug, pathSlug } = Astro.props
 ---
 
 <article
-class="relative transition-all ease-linear group hover:border-accent bg-white border-solid border-2 border-gray-200/50 flex flex-col gap-3 p-6 rounded-lg"
+  class="relative transition-all ease-linear group hover:border-accent bg-white border-solid ring-1 ring-gray-200/50 flex flex-col gap-3 p-6 rounded-2xl"
 >
-<button
-  class="z-10 absolute top-4 right-4"
-  aria-label={title}
-  data-saveid={`/${slug}/`}
-  aria-pressed="false"
->
-  {""}
-</button>
- <h3
-  class="transition-all ease-linear group-hover:text-accent text-xl font-bold line-clamp-1 select-none"
- >
-  <a href={pathSlug + slug}>{title}</a>
- </h3>
- <p class="line-clamp-2 text-sm select-none">{desc}</p>
- <a
-  href={pathSlug + slug}
-  class="text-sm px-7 py-1 rounded-md self-end bg-accent text-white group-hover:translate-x-[3px] transition-transform"
-  >Читать</a
- >
+  <h3
+    class="transition-all ease-linear group-hover:text-accent text-xl font-bold line-clamp-1 select-none"
+  >
+    <a href={pathSlug + slug}>{title}</a>
+  </h3>
+  <p class="line-clamp-2 text-sm select-none">{desc}</p>
+  <a
+    href={pathSlug + slug}
+    class="text-sm px-7 py-1 rounded-md self-end bg-accent text-white group-hover:translate-x-[3px] transition-transform bg-color-accent"
+    >Читать</a
+  >
 </article>

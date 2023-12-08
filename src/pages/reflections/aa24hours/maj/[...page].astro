@@ -1,68 +1,71 @@
 ---
-export const prerender = true;
-import Layout from "~/layouts/Layout.astro"
+export const prerender = true
+import Layout from '~/layouts/Layout.astro'
 
 // в Layout можно дабавить indexSite={false} чтобы не индексировать страницу
 // Для постов - typeSite="article" | по умолчанию typeSite="website"
-const { pubDate, page } = Astro.props;
+const { pubDate, page } = Astro.props
 
-import { getCollection } from "astro:content"
-import Article from "~/components/Article.astro"
-import Pagination from "~/components/Pagination.astro"
-import Search from "~/components/Search"
-import FinalTitle from "~/components/UI/FinalTitle.astro"
-import Months from "~/components/UI/Months.astro"
-import Moths12 from "~/components/UI/Moths12.astro"
-import Nav from "~/components/UI/Nav.astro"
-import { REFLECTIONS_NAMES } from "~/scripts/params"
+import { getCollection } from 'astro:content'
+import Article from '~/components/Article.astro'
+import Pagination from '~/components/Pagination.astro'
+import Search from '~/components/Search'
+import FinalTitle from '~/components/UI/FinalTitle.astro'
+import Months from '~/components/UI/Months.astro'
+import Moths12 from '~/components/UI/Moths12.astro'
+import Nav from '~/components/UI/Nav.astro'
+import { REFLECTIONS_NAMES } from '~/scripts/params'
 
 // настроить переменные
-const { reflection = "aa24hours", pathSlug = "/reflections/aa24hours/" } = Astro.props;
-const finalTitle = REFLECTIONS_NAMES.aa24hours.name + " - " + REFLECTIONS_NAMES.moth[5];
-const finalDesc = REFLECTIONS_NAMES.aa24hours.desc;
+const { reflection = 'aa24hours', pathSlug = '/reflections/aa24hours/' } = Astro.props
+const finalTitle = REFLECTIONS_NAMES.aa24hours.name + ' - ' + REFLECTIONS_NAMES.moth[5]
+const finalDesc = REFLECTIONS_NAMES.aa24hours.desc
 
-const forSearch = await getCollection(reflection);
+const forSearch = await getCollection(reflection)
 export async function getStaticPaths({ paginate }) {
- const allPosts = await getCollection("aa24hours");
- const sortPost = allPosts
-  .filter((a) => a.data.moth === "maj")
-  .sort((a, b) => a.data.id.length - b.data.id.length);
- return paginate(sortPost, {
-  pageSize: 9,
- });
+  const allPosts = await getCollection('aa24hours')
+  const sortPost = allPosts
+    .filter((a) => a.data.moth === 'maj')
+    .sort((a, b) => a.data.id.length - b.data.id.length)
+  return paginate(sortPost, {
+    pageSize: 9,
+  })
 }
 ---
 
 <Layout title={finalTitle} desc={finalDesc} poster="" pubDate={pubDate}>
- <div class="myContainer">
-  <Nav />
-  <div class="mt-4 mb-10 md:my-10 flex gap-5 flex-wrap items-center justify-between">
-   <FinalTitle title={finalTitle} />
-   <Moths12 />
-  </div>
-  <Months pathName="aa24hours" />
-  <div>
-   <Search client:load toLink={pathSlug} searchList={forSearch} />
-  </div>
-  <Pagination
-   prevUrl={page.url.prev}
-   current={page.currentPage}
-   nextUrl={page.url.next}
-  />
+  <div class="myContainer">
+    <Nav />
+    <div class="mt-4 mb-10 md:my-10 flex gap-5 flex-wrap items-center justify-between">
+      <FinalTitle title={finalTitle} />
+      <Moths12 />
+    </div>
+    <Months pathName="aa24hours" />
+    <div>
+      <Search client:load toLink={pathSlug} searchList={forSearch} />
+    </div>
+    <Pagination
+      prevUrl={page.url.prev}
+      current={page.currentPage}
+      nextUrl={page.url.next}
+    />
 
-  <div class="my-5 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-   {
-    page.data.map(async (post) => (
-     <Article title={post.data.title} desc={post.data.desc} {pathSlug} slug={post.slug} />
-    ))
-   }
+    <div class="container_in_page_reflection">
+      {
+        page.data.map(async (post) => (
+          <Article
+            title={post.data.title}
+            desc={post.data.desc}
+            {pathSlug}
+            slug={post.slug}
+          />
+        ))
+      }
+    </div>
+    <Pagination
+      prevUrl={page.url.prev}
+      current={page.currentPage}
+      nextUrl={page.url.next}
+    />
   </div>
-  <Pagination
-   prevUrl={page.url.prev}
-   current={page.currentPage}
-   nextUrl={page.url.next}
-  />
-
-
- </div>
 </Layout>
