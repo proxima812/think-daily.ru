@@ -1,0 +1,77 @@
+---
+import Article from '~/components/Article.astro'
+import Pagination from '~/components/Pagination.astro'
+import FinalTitle from '~/components/UI/FinalTitle.astro'
+import Months from '~/components/UI/Months.astro'
+import Moths12 from '~/components/UI/Moths12.astro'
+import Nav from '~/components/UI/Nav.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getPageReflection } from '~/utils/getPageReflection'
+
+interface Props {
+  finalTitle: string
+  finalDesc: string
+  MonthsPathName: string
+  collection: string
+  moth: string
+  pathSlug: string
+  pubDate: string
+  page: string
+}
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getPageReflection(collection, moth)
+  return paginate(allPosts, {
+    pageSize: 9,
+  })
+}
+
+const {
+  moth,
+  collection,
+  pathSlug = `/reflections${collection}`,
+  finalTitle,
+  finalDesc,
+  MonthsPathName,
+  pubDate,
+  page,
+} = Astro.props
+---
+
+<Layout title={finalTitle} desc={finalDesc} pubDate={pubDate}>
+  <div class="myContainer">
+  <Nav />
+  <div class="mt-4 mb-10 md:my-10 flex gap-5 flex-wrap items-center justify-between">
+    <FinalTitle title={finalTitle} />
+    <Moths12 />
+  </div>
+  <Months pathName={MonthsPathName} />
+
+  <Pagination
+    prevUrl={page.url.prev}
+    current={page.currentPage}
+    nextUrl={page.url.next}
+  />
+
+  <div class="container_in_page_reflection">
+    {
+      page.data.map(async (post) => (
+        <Article
+          title={post.data.title}
+          desc={post.data.desc}
+          {pathSlug}
+          slug={post.slug}
+        />
+      ))
+    }
+  </div>
+
+  <slot />
+
+  <Pagination
+    prevUrl={page.url.prev}
+    current={page.currentPage}
+    nextUrl={page.url.next}
+  />
+  </div>
+</Layout>
