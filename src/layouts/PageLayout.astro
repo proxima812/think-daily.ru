@@ -1,0 +1,13 @@
+---
+import Nav from '~/components/UI/Nav.astro'
+import Layout from './Layout.astro'
+---
+
+<Layout title="О проекте">
+  <div class="myContainer">
+    <Nav />
+    <div class="my-4 md:my-10 prose prose-headings:text-[24px] max-w-none">
+      <slot />
+    </div>
+  </div>
+</Layout>

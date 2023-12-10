@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import AsidePanel from "~/components/AsidePanel.astro";
 import BannerCopied from "~/components/BannerCopied.astro";
 import Layout from "~/layouts/Layout.astro";
+import SlugProse from '~/layouts/SlugProse.astro'
 export async function getStaticPaths() {
  // настроить reflection
  const reflection = "slt";
@@ -28,12 +29,9 @@ const { Content } = await post.render();
  <div class="myContainer">
   <BannerCopied />
   <div class="py-4 md:py-10 flex justify-center relative">
-   <div class="prose lg:prose-md post">
-    <AsidePanel toLink={toBack} />
-    <h1>{title}</h1>
-    <h3>{desc}</h3>
+   <SlugProse data={post.data} toBack={toBack}>
     <Content />
-   </div>
+   </SlugProse>
   </div>
  </div>
 </Layout>

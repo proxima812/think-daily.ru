@@ -15575,6 +15575,631 @@ declare module 'astro:content' {
   data: InferEntrySchema<"an">
 } & { render(): Render[".md"] };
 };
+"as": {
+"90-SA-day-1.md": {
+	id: "90-SA-day-1.md";
+  slug: "90-sa-day-1";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-10.md": {
+	id: "90-SA-day-10.md";
+  slug: "90-sa-day-10";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-11.md": {
+	id: "90-SA-day-11.md";
+  slug: "90-sa-day-11";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-12.md": {
+	id: "90-SA-day-12.md";
+  slug: "90-sa-day-12";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-13.md": {
+	id: "90-SA-day-13.md";
+  slug: "90-sa-day-13";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-14.md": {
+	id: "90-SA-day-14.md";
+  slug: "90-sa-day-14";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-15.md": {
+	id: "90-SA-day-15.md";
+  slug: "90-sa-day-15";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-16.md": {
+	id: "90-SA-day-16.md";
+  slug: "90-sa-day-16";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-17.md": {
+	id: "90-SA-day-17.md";
+  slug: "90-sa-day-17";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-18.md": {
+	id: "90-SA-day-18.md";
+  slug: "90-sa-day-18";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-19.md": {
+	id: "90-SA-day-19.md";
+  slug: "90-sa-day-19";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-2.md": {
+	id: "90-SA-day-2.md";
+  slug: "90-sa-day-2";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-20.md": {
+	id: "90-SA-day-20.md";
+  slug: "90-sa-day-20";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-21.md": {
+	id: "90-SA-day-21.md";
+  slug: "90-sa-day-21";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-22.md": {
+	id: "90-SA-day-22.md";
+  slug: "90-sa-day-22";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-23.md": {
+	id: "90-SA-day-23.md";
+  slug: "90-sa-day-23";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-24.md": {
+	id: "90-SA-day-24.md";
+  slug: "90-sa-day-24";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-25.md": {
+	id: "90-SA-day-25.md";
+  slug: "90-sa-day-25";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-26.md": {
+	id: "90-SA-day-26.md";
+  slug: "90-sa-day-26";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-27.md": {
+	id: "90-SA-day-27.md";
+  slug: "90-sa-day-27";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-28.md": {
+	id: "90-SA-day-28.md";
+  slug: "90-sa-day-28";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-29.md": {
+	id: "90-SA-day-29.md";
+  slug: "90-sa-day-29";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-3.md": {
+	id: "90-SA-day-3.md";
+  slug: "90-sa-day-3";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-30.md": {
+	id: "90-SA-day-30.md";
+  slug: "90-sa-day-30";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-31.md": {
+	id: "90-SA-day-31.md";
+  slug: "90-sa-day-31";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-32.md": {
+	id: "90-SA-day-32.md";
+  slug: "90-sa-day-32";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-33.md": {
+	id: "90-SA-day-33.md";
+  slug: "90-sa-day-33";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-34.md": {
+	id: "90-SA-day-34.md";
+  slug: "90-sa-day-34";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-35.md": {
+	id: "90-SA-day-35.md";
+  slug: "90-sa-day-35";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-36.md": {
+	id: "90-SA-day-36.md";
+  slug: "90-sa-day-36";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-37.md": {
+	id: "90-SA-day-37.md";
+  slug: "90-sa-day-37";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-38.md": {
+	id: "90-SA-day-38.md";
+  slug: "90-sa-day-38";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-39.md": {
+	id: "90-SA-day-39.md";
+  slug: "90-sa-day-39";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-4.md": {
+	id: "90-SA-day-4.md";
+  slug: "90-sa-day-4";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-40.md": {
+	id: "90-SA-day-40.md";
+  slug: "90-sa-day-40";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-41.md": {
+	id: "90-SA-day-41.md";
+  slug: "90-sa-day-41";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-42.md": {
+	id: "90-SA-day-42.md";
+  slug: "90-sa-day-42";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-43.md": {
+	id: "90-SA-day-43.md";
+  slug: "90-sa-day-43";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-44.md": {
+	id: "90-SA-day-44.md";
+  slug: "90-sa-day-44";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-45.md": {
+	id: "90-SA-day-45.md";
+  slug: "90-sa-day-45";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-46.md": {
+	id: "90-SA-day-46.md";
+  slug: "90-sa-day-46";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-47.md": {
+	id: "90-SA-day-47.md";
+  slug: "90-sa-day-47";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-48.md": {
+	id: "90-SA-day-48.md";
+  slug: "90-sa-day-48";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-49.md": {
+	id: "90-SA-day-49.md";
+  slug: "90-sa-day-49";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-5.md": {
+	id: "90-SA-day-5.md";
+  slug: "90-sa-day-5";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-50.md": {
+	id: "90-SA-day-50.md";
+  slug: "90-sa-day-50";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-51.md": {
+	id: "90-SA-day-51.md";
+  slug: "90-sa-day-51";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-52.md": {
+	id: "90-SA-day-52.md";
+  slug: "90-sa-day-52";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-53.md": {
+	id: "90-SA-day-53.md";
+  slug: "90-sa-day-53";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-54.md": {
+	id: "90-SA-day-54.md";
+  slug: "90-sa-day-54";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-55.md": {
+	id: "90-SA-day-55.md";
+  slug: "90-sa-day-55";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-56.md": {
+	id: "90-SA-day-56.md";
+  slug: "90-sa-day-56";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-57.md": {
+	id: "90-SA-day-57.md";
+  slug: "90-sa-day-57";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-58.md": {
+	id: "90-SA-day-58.md";
+  slug: "90-sa-day-58";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-59.md": {
+	id: "90-SA-day-59.md";
+  slug: "90-sa-day-59";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-6.md": {
+	id: "90-SA-day-6.md";
+  slug: "90-sa-day-6";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-60.md": {
+	id: "90-SA-day-60.md";
+  slug: "90-sa-day-60";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-61.md": {
+	id: "90-SA-day-61.md";
+  slug: "90-sa-day-61";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-62.md": {
+	id: "90-SA-day-62.md";
+  slug: "90-sa-day-62";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-63.md": {
+	id: "90-SA-day-63.md";
+  slug: "90-sa-day-63";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-64.md": {
+	id: "90-SA-day-64.md";
+  slug: "90-sa-day-64";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-65.md": {
+	id: "90-SA-day-65.md";
+  slug: "90-sa-day-65";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-66.md": {
+	id: "90-SA-day-66.md";
+  slug: "90-sa-day-66";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-67.md": {
+	id: "90-SA-day-67.md";
+  slug: "90-sa-day-67";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-68.md": {
+	id: "90-SA-day-68.md";
+  slug: "90-sa-day-68";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-69.md": {
+	id: "90-SA-day-69.md";
+  slug: "90-sa-day-69";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-7.md": {
+	id: "90-SA-day-7.md";
+  slug: "90-sa-day-7";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-70.md": {
+	id: "90-SA-day-70.md";
+  slug: "90-sa-day-70";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-71.md": {
+	id: "90-SA-day-71.md";
+  slug: "90-sa-day-71";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-72.md": {
+	id: "90-SA-day-72.md";
+  slug: "90-sa-day-72";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-73.md": {
+	id: "90-SA-day-73.md";
+  slug: "90-sa-day-73";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-74.md": {
+	id: "90-SA-day-74.md";
+  slug: "90-sa-day-74";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-75.md": {
+	id: "90-SA-day-75.md";
+  slug: "90-sa-day-75";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-76.md": {
+	id: "90-SA-day-76.md";
+  slug: "90-sa-day-76";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-77.md": {
+	id: "90-SA-day-77.md";
+  slug: "90-sa-day-77";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-78.md": {
+	id: "90-SA-day-78.md";
+  slug: "90-sa-day-78";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-79.md": {
+	id: "90-SA-day-79.md";
+  slug: "90-sa-day-79";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-8.md": {
+	id: "90-SA-day-8.md";
+  slug: "90-sa-day-8";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-80.md": {
+	id: "90-SA-day-80.md";
+  slug: "90-sa-day-80";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-81.md": {
+	id: "90-SA-day-81.md";
+  slug: "90-sa-day-81";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-82.md": {
+	id: "90-SA-day-82.md";
+  slug: "90-sa-day-82";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-83.md": {
+	id: "90-SA-day-83.md";
+  slug: "90-sa-day-83";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-84.md": {
+	id: "90-SA-day-84.md";
+  slug: "90-sa-day-84";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-85.md": {
+	id: "90-SA-day-85.md";
+  slug: "90-sa-day-85";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-86.md": {
+	id: "90-SA-day-86.md";
+  slug: "90-sa-day-86";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-87.md": {
+	id: "90-SA-day-87.md";
+  slug: "90-sa-day-87";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-88.md": {
+	id: "90-SA-day-88.md";
+  slug: "90-sa-day-88";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-89.md": {
+	id: "90-SA-day-89.md";
+  slug: "90-sa-day-89";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+"90-SA-day-9.md": {
+	id: "90-SA-day-9.md";
+  slug: "90-sa-day-9";
+  body: string;
+  collection: "as";
+  data: InferEntrySchema<"as">
+} & { render(): Render[".md"] };
+};
 "beattiem": {
 "april/daily_01-04.md": {
 	id: "april/daily_01-04.md";

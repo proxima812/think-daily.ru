@@ -47,6 +47,13 @@ function renderName(name) {
         {name}
       </span>
     )
+  } else if (name.includes('Сексоголики')) {
+    return (
+      <span className="flex gap-1 items-center">
+        <AS />
+        {name}
+      </span>
+    )
   }
   return name
 }

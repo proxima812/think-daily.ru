@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import AsidePanel from "~/components/AsidePanel.astro";
+import BannerCopied from "~/components/BannerCopied.astro";
+import Layout from "~/layouts/Layout.astro";
+import SlugProse from '~/layouts/SlugProse.astro'
+export async function getStaticPaths() {
+ // настроить reflection
+ const reflection = "as";
+ const allPosts = await getCollection(reflection);
+ return allPosts.map((post) => ({
+  params: { slug: post.slug },
+  props: {
+   post,
+  },
+ }));
+}
+// настроить toBack
+const { post, toBack = "/reflections/as" } = Astro.props;
+const { title, desc, pubDate } = post.data;
+
+const finalTitle =
+ "Ежедневные размышления" + " - " + title + ", " + "скопировать";
+
+const { Content } = await post.render();
+---
+
+<Layout title={finalTitle} desc={desc} pubDate={pubDate} typeSite="article">
+ <div class="myContainer">
+  <BannerCopied />
+  <div class="py-4 md:py-10 flex justify-center relative">
+   <SlugProse data={post.data} toBack={toBack}>
+    <Content />
+   </SlugProse>
+  </div>
+ </div>
+</Layout>

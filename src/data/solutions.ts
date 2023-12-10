@@ -39,4 +39,9 @@ export const solutions = [
     description: 'Размышление к пути, гармонии',
     href: '/reflections/slt',
   },
+  {
+    name: 'АС: 90 дней размышлений',
+    description: '90 дней размышлений для Анонимных Сексоголиков',
+    href: '/reflections/as',
+  },
 ]

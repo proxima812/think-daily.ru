@@ -40,11 +40,14 @@ const {
 
 <Layout title={finalTitle} desc={finalDesc} pubDate={pubDate}>
   <div class="myContainer">
+
   <Nav />
+
   <div class="mt-4 mb-10 md:my-10 flex gap-5 flex-wrap items-center justify-between">
     <FinalTitle title={finalTitle} />
     <Moths12 />
   </div>
+
   <Months pathName={MonthsPathName} />
 
   <Pagination
@@ -73,5 +76,6 @@ const {
     current={page.currentPage}
     nextUrl={page.url.next}
   />
+  
   </div>
 </Layout>

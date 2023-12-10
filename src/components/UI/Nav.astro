@@ -1,15 +1,10 @@
 ---
-import PopoverMenu from "../customs/PopoverMenu"
+import PopoverMenu from '../customs/PopoverMenu'
 const link =
- "inline-flex text-sm md:text-[16px] items-center select-none font-medium py-2 px-3 rounded-lg bg-white hover:bg-accent hover:text-white transition-colors ease-linear";
+  'inline-flex text-sm md:text-[16px] items-center select-none font-medium py-2 px-3 rounded-lg bg-white hover:bg-accent hover:text-white transition-colors ease-linear'
 ---
 
-
 <div class="py-6 flex gap-3 md:gap-0 flex-wrap items-center justify-between">
- <span class="w-[148px] md:w-[164px]"
-  ><a href="/about" class={"order-2 md:order-1 " + link}>📲 О проекте</a></span
- >
- <PopoverMenu client:load />
- <a href="/reflections" class={"order-3 " + link}>📕 Про ежедневники</a>
- <a href="/feedback" class={link}>🔖 Обратная связь</a>
+  <PopoverMenu client:load />
+  <a href="/feedback" class={link}>🔖 Обратная связь</a>
 </div>

@@ -1,0 +1,69 @@
+---
+export const prerender = true
+import Layout from '~/layouts/Layout.astro'
+
+// в Layout можно дабавить indexSite={false} чтобы не индексировать страницу
+// Для постов - typeSite="article" | по умолчанию typeSite="website"
+const { pubDate, page } = Astro.props
+
+import { getCollection } from 'astro:content'
+import Article from '~/components/Article.astro'
+import Pagination from '~/components/Pagination.astro'
+import Search from '~/components/Search'
+import FinalTitle from '~/components/UI/FinalTitle.astro'
+import Nav from '~/components/UI/Nav.astro'
+import { REFLECTIONS_NAMES } from '~/scripts/params'
+
+// настроить переменные
+const {
+  reflection = REFLECTIONS_NAMES.as.path,
+  pathSlug = `/reflections/${REFLECTIONS_NAMES.as.path}/`,
+} = Astro.props
+const finalTitle = REFLECTIONS_NAMES.as.name
+const finalDesc = REFLECTIONS_NAMES.as.desc
+
+const forSearch = await getCollection(reflection)
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('as')
+  return paginate(allPosts, {
+    pageSize: 9,
+  })
+}
+---
+
+<Layout title={finalTitle} desc={finalDesc} poster="" pubDate={pubDate}>
+  <div class="myContainer">
+    <Nav />
+    <div class="mt-4 mb-10 md:my-10 flex gap-5 flex-wrap items-center justify-between">
+      <FinalTitle title={finalTitle} />
+      <p class="text-sm">
+        Размышления на <span class="underline underline-offset-4 font-bold">90 дней</span>
+      </p>
+    </div>
+    <div>
+      <Search client:load toLink={pathSlug} searchList={forSearch} />
+    </div>
+    <Pagination
+      prevUrl={page.url.prev}
+      current={page.currentPage}
+      nextUrl={page.url.next}
+    />
+    <div class="container_in_page_reflection">
+      {
+        page.data.map(async (post) => (
+          <Article
+            title={post.data.title}
+            desc={post.data.desc}
+            {pathSlug}
+            slug={post.slug}
+          />
+        ))
+      }
+    </div>
+    <Pagination
+      prevUrl={page.url.prev}
+      current={page.currentPage}
+      nextUrl={page.url.next}
+    />
+  </div>
+</Layout>
