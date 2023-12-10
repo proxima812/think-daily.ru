@@ -13,9 +13,10 @@ import { WEBSITE } from '/src/scripts/params.ts'
 export default defineConfig({
   site: `${WEBSITE.url}`,
   prefetch: true,
-  experimental: {
-    contentCollectionCache: true,
-  },
+  compressHTML: true,
+  // experimental: {
+  //   contentCollectionCache: true,
+  // },
   //  redirects: {
   //   "/reflections/aa": "/reflections/aa/yanvar",
   //   "/reflections/an": "/reflections/an/yanvar",
