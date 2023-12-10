@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content'
 export const collections = {
   aa24hours: defineCollection({
     schema: z.object({
@@ -73,10 +73,9 @@ export const collections = {
   }),
   as: defineCollection({
     schema: z.object({
-      id: z.string(),
-      title: z.string(),
-      desc: z.string(),
-      pubDate: z.date(),
+      id: z.string().optional(),
+      title: z.string().optional(),
+      desc: z.string().optional(),
     }),
   }),
 }
