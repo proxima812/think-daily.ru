@@ -11,7 +11,7 @@ const aa24hours = defineCollection({
   }),
 })
 
-const beattiem = defineCollection({
+const lolfc = defineCollection({
   type: 'content',
   schema: z.object({
     id: z.string(),
@@ -95,7 +95,7 @@ export const collections = {
   an,
   slt,
   aa24hours,
-  beattiem,
+  lolfc,
   aadays,
   alanon,
   alanonmm,

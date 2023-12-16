@@ -6,25 +6,21 @@ import SlugProse from '~/layouts/SlugProse.astro'
 
 export async function getStaticPaths() {
   // настроить reflection
-  const reflection = 'alanon'
+  const reflection = 'aa'
   const allPosts = await getCollection(reflection)
   const postCount = allPosts.length
   return allPosts.map((post, index) => ({
     params: { slug: post.slug },
     props: {
       post,
-      reflection,
       prevPost: index !== 0 ? allPosts[index - 1] : null,
       nextPost: index + 1 < postCount ? allPosts[index + 1] : null,
     },
   }))
 }
-
 // настроить toBack
-const { post, prevPost, nextPost, reflection } = Astro.props
+const { post, toBack = '/reflections/aa/yanvar', prevPost, nextPost } = Astro.props
 const { title, desc, pubDate } = post.data
-
-const toBack = `/reflections/${reflection}/yanvar`
 
 const finalTitle =
   'Ежедневные размышления' + ' - ' + title + ', ' + 'скопировать для собрания'

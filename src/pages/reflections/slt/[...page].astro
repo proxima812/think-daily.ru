@@ -30,6 +30,7 @@ export async function getStaticPaths({ paginate }) {
     pageSize: 7,
   })
 }
+
 ---
 
 <Layout title={finalTitle} desc={finalDesc} poster="" pubDate={pubDate}>
@@ -45,7 +46,7 @@ export async function getStaticPaths({ paginate }) {
 
     <div class="container_in_page_reflection">
       {
-        page.data.map(async (post) => (
+        page.data.map((post) => (
           <Article
             title={post.data.title}
             desc={post.data.desc}

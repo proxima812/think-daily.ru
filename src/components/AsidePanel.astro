@@ -1,9 +1,17 @@
 ---
-const { toLink } = Astro.props
+const { toLink, nextPost, prevPost } = Astro.props
 const btn = 'flex text-sm items-center gap-1 p-2 rounded-md bg-white'
+
+function removeLastSegment(url) {
+  const lastSlashIndex = url.lastIndexOf('/')
+  if (lastSlashIndex === -1) {
+    return url // Если слеш не найден, возвращаем исходную строку
+  }
+  return url.slice(0, lastSlashIndex) // Возвращаем подстроку до последнего слеша
+}
 ---
 
-<aside class="not-prose flex items-center gap-4 flex-wrap justify-between pt-6 pb-9">
+<aside class="not-prose flex items-center gap-4 flex-wrap justify-between">
   <a class={btn} href={toLink}>&#8592; Назад</a>
   <div class="flex items-center gap-4">
     <button
@@ -61,6 +69,32 @@ const btn = 'flex text-sm items-center gap-1 p-2 rounded-md bg-white'
     >
   </div>
 </aside>
+
+<div class="my-6">
+  {
+    (nextPost || prevPost) && (
+      <div class="flex justify-between">
+        {prevPost && (
+          <a
+            class="flex items-center font-semibold text-blue-500 underline underline-offset-4"
+            href={`${removeLastSegment(toLink)}/${prevPost.slug}`}
+          >
+             {prevPost.data.title.length > 20 ? `${prevPost.data.title.substring(0, 20)}...` : prevPost.data.title}
+          </a>
+        )}
+        {nextPost && (
+          <a
+            class="flex items-center font-semibold text-blue-500 underline underline-offset-4"
+            href={`${removeLastSegment(toLink)}/${nextPost.slug}`}
+          >
+             {nextPost.data.title.length > 20 ? `${nextPost.data.title.substring(0, 20)}...` : nextPost.data.title}
+          </a>
+        )}
+        
+      </div>
+    )
+  }
+</div>
 <script is:inline>
   // export default для .mdx файлов.
   function copyClipBoard(event) {

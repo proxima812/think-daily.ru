@@ -3,22 +3,28 @@ import { getCollection } from 'astro:content'
 import BannerCopied from '~/components/BannerCopied.astro'
 import Layout from '~/layouts/Layout.astro'
 import SlugProse from '~/layouts/SlugProse.astro'
+
 export async function getStaticPaths() {
   // настроить reflection
   const reflection = 'aadays'
   const allPosts = await getCollection(reflection)
-  return allPosts
-    .sort((a, b) => a.id.length - b.id.length)
-    .map((post) => ({
-      params: { slug: post.slug },
-      props: {
-        post,
-      },
-    }))
+  const postCount = allPosts.length
+  return allPosts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      reflection,
+      prevPost: index !== 0 ? allPosts[index - 1] : null,
+      nextPost: index + 1 < postCount ? allPosts[index + 1] : null,
+    },
+  }))
 }
+
 // настроить toBack
-const { post, toBack = '/reflections/aadays/yanvar' } = Astro.props
+const { post, prevPost, nextPost, reflection } = Astro.props
 const { title, desc, pubDate } = post.data
+
+const toBack = `/reflections/${reflection}/yanvar`
 
 const finalTitle =
   'Ежедневные размышления' + ' - ' + title + ', ' + 'скопировать для собрания'
@@ -30,9 +36,9 @@ const { Content } = await post.render()
   <div class="myContainer">
     <BannerCopied />
     <div class="py-4 md:py-10 flex justify-center relative">
-      <SlugProse data={post.data} toBack={toBack}>
+      <SlugProse data={post.data} toBack={toBack} nextPost={nextPost} prevPost={prevPost}>
         <Content />
-      </SlugPros>
+      </SlugProse>
     </div>
   </div>
 </Layout>

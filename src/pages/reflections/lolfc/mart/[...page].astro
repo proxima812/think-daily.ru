@@ -17,13 +17,13 @@ import Nav from '~/components/UI/Nav.astro'
 import { REFLECTIONS_NAMES } from '~/scripts/params'
 
 // настроить переменные
-const { reflection = 'beattiem', pathSlug = '/reflections/lolfc/' } = Astro.props
+const { reflection = 'lolfc', pathSlug = '/reflections/lolfc/' } = Astro.props
 const finalTitle = REFLECTIONS_NAMES.lolfc.name + ' - ' + REFLECTIONS_NAMES.moth[3]
 const finalDesc = REFLECTIONS_NAMES.lolfc.desc
 
 const forSearch = await getCollection(reflection)
 export async function getStaticPaths({ paginate }) {
-  const allPosts = await getCollection('beattiem')
+  const allPosts = await getCollection('lolfc')
   const sortPost = allPosts
     .filter((a) => a.data.moth === 'mart')
     .sort((a, b) => a.data.id.length - b.data.id.length)

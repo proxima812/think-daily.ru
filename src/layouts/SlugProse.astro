@@ -1,10 +1,10 @@
 ---
 import AsidePanel from '~/components/AsidePanel.astro'
-const { data, toBack } = Astro.props
+const { data, toBack, nextPost, prevPost } = Astro.props
 ---
 
 <div class="prose prose-slate md:prose-md lg:prose-lg xl:prose-xl post">
-  <AsidePanel toLink={toBack} />
+  <AsidePanel toLink={toBack} nextPost={nextPost} prevPost={prevPost} />
   <div class="bg-white p-5 md:p-10 rounded-xl">
     <h1>{data.title}</h1>
     <h3>{data.desc}</h3>

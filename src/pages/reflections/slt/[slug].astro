@@ -1,37 +1,44 @@
 ---
-import { getCollection } from "astro:content";
-import AsidePanel from "~/components/AsidePanel.astro";
-import BannerCopied from "~/components/BannerCopied.astro";
-import Layout from "~/layouts/Layout.astro";
+import { getCollection } from 'astro:content'
+import BannerCopied from '~/components/BannerCopied.astro'
+import Layout from '~/layouts/Layout.astro'
 import SlugProse from '~/layouts/SlugProse.astro'
+
 export async function getStaticPaths() {
- // настроить reflection
- const reflection = "slt";
- const allPosts = await getCollection(reflection);
- return allPosts.map((post) => ({
-  params: { slug: post.slug },
-  props: {
-   post,
-  },
- }));
+  // настроить reflection
+  const reflection = 'slt'
+  const allPosts = await getCollection(reflection)
+  const postCount = allPosts.length
+  return allPosts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      reflection,
+      prevPost: index !== 0 ? allPosts[index - 1] : null,
+      nextPost: index + 1 < postCount ? allPosts[index + 1] : null,
+    },
+  }))
 }
+
 // настроить toBack
-const { post, toBack = "/reflections/slt" } = Astro.props;
-const { title, desc, pubDate } = post.data;
+const { post, prevPost, nextPost, reflection } = Astro.props
+const { title, desc, pubDate } = post.data
+
+const toBack = `/reflections/${reflection}/`
 
 const finalTitle =
- "Ежедневные размышления" + " - " + title + ", " + "скопировать";
+  'Ежедневные размышления' + ' - ' + title + ', ' + 'скопировать для собрания'
 
-const { Content } = await post.render();
+const { Content } = await post.render()
 ---
 
 <Layout title={finalTitle} desc={desc} pubDate={pubDate} typeSite="article">
- <div class="myContainer">
-  <BannerCopied />
-  <div class="py-4 md:py-10 flex justify-center relative">
-   <SlugProse data={post.data} toBack={toBack}>
-    <Content />
-   </SlugProse>
+  <div class="myContainer">
+    <BannerCopied />
+    <div class="py-4 md:py-10 flex justify-center relative">
+      <SlugProse data={post.data} toBack={toBack} nextPost={nextPost} prevPost={prevPost}>
+        <Content />
+      </SlugProse>
+    </div>
   </div>
- </div>
 </Layout>
